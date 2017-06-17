@@ -1,7 +1,7 @@
 package io.cutoutsy.utils;
 
 public class ConfigParas {
-    public static ReadConfigUtil readConfigUtil= new ReadConfigUtil("../config.properties", true);
+    public static ReadConfigUtil readConfigUtil= new ReadConfigUtil("/opt/build/config.properties", true);
 
     public static String redis_host = readConfigUtil.getValue("redis_host");
     public static String redis_port = readConfigUtil.getValue("redis_port");

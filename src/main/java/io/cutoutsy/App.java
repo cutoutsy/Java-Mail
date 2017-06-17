@@ -14,8 +14,8 @@ public class App
             String notice = redis.lpop(ConfigParas.mail_db);
             if (notice != null && notice.length() > 0) {
                 String toAddress = notice.split("\\$\\$")[0];
-                String title = "课程通知";
-                String content = notice.split("\\$\\$")[1];
+                String title = notice.split("\\$\\$")[1];
+                String content = notice.split("\\$\\$")[2];
                 SimpleMailSender.SendMail(toAddress, title, content);
             }
             try {
